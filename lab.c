@@ -4,26 +4,37 @@
 
 struct node
 {
-    float t,f;
-}s1,s2;
-
-struct node1
-{
-    float t,f
-}rq[2],r2[2];
-
-struct node2
-{
-    float t,f;
-}q1[4],q2[4];
+    char name[10];
+}s1[10];
 
 int main()
 {
-    char nodes[20],prob[30],initial1,initial2;
-    int i,nprob;
-    gets(nodes);
+    char nodes[20],prob[30];
+    int i,j,nnodes=0,nprob;
+    scanf("%s",&nodes);
     
-    initial1=nodes[0];
+    
+    for(i=0;i<20;i++)
+    {
+        if(nnodes==0&&nodes[i]!=' '&&nodes[i]!=',')
+            s1[nnodes].name[i]=nodes[i];
+        else
+            if(nodes[i]==',')
+                nnodes++;
+            else
+                if(nnodes==1&&nodes[i]!=' '&&nodes[i]!=',')
+                {
+                    s1[nnodes].name[i]=nodes[i];
+                    j++;
+                }
+                else
+                    if(nodes[i]=='\0')
+                        i=20;
+    }
+    
+    printf("%s \n",s1[0].name);
+    printf("%s \n",s1[1].name);
+    /*initial1=nodes[0];
     
     for(i=0;i<20;i++)
     {
@@ -48,7 +59,7 @@ int main()
         }
     }
     
-    printf("%c %c",initial1,initial2);
+    printf("%c %c",initial1,initial2);*/
     
     return 0;
 }
