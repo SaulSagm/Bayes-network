@@ -407,7 +407,7 @@ int main ()
     
     for(j=0;j<r;j++)    //In the end all the values saved in the structure of
     {    
-        sprintf(nresult[j].fvalue,".7g",nresult[j].value);
+        sprintf(nresult[j].fvalue,"%.7g",nresult[j].value);
         printf("%s\n",nresult[j].fvalue);    //results is given in order
     }
     return 0;   //End
