@@ -407,7 +407,7 @@ int main ()
     
     for(j=0;j<r;j++)    //In the end all the values saved in the structure of
     {    
-        gcvt(nresult[j].value,8,nresul[j].fvalue);
+        gcvt(nresult[j].value,8,nresult[j].fvalue);
         printf("%.7f\n",nresult[j].fvalue);    //results is given in order
     }
     return 0;   //End
