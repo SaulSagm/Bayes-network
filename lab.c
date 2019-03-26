@@ -130,7 +130,9 @@ int main ()
             if(countD>0)
             {
                 if(lim==0)
+                {
                     lim=2^(countC+1);    //Number of conditions needed
+                }
                 par=1;
                 strcpy(str6,str2);      //The string is saved in another one
                 pch3=strtok(str2," |=");
