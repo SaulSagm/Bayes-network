@@ -22,7 +22,7 @@ struct pstate   //The conditions are saved with their respective probability
 struct result
 {
     float value;        //The results are saved in the same order in which
-    char  fvalue[9];
+    char  fvalue[7];
 }nresult[15];           //the conditions were asked
 
 struct num
