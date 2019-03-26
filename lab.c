@@ -22,6 +22,7 @@ struct pstate   //The conditions are saved with their respective probability
 struct result
 {
     float value;        //The results are saved in the same order in which
+    char  fvalue[9];
 }nresult[15];           //the conditions were asked
 
 struct num
@@ -405,7 +406,9 @@ int main ()
     }
     
     for(j=0;j<r;j++)    //In the end all the values saved in the structure of
-        printf("%.7f\n",nresult[j].value);    //results is given in order
-    
+    {    
+        gcvt(nresult[j].value,8,nresul[j].fvalue);
+        printf("%.7f\n",nresult[j].fvalue);    //results is given in order
+    }
     return 0;   //End
 }
