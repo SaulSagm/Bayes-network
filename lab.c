@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
-#include<stdlib.h>
+#include <stdlib.h>
+#include <math.h>
  
 struct node     //The name of each node is saved in a structure
 {
@@ -63,7 +64,8 @@ int main ()
     char *val1=val,*cant1=cant,*por1=por,*var1=var;
     char *pot1=pot,*vat1=vat,*mat1=mat,*mar1=mar,*car1=car;
     
-    gets(str1); //First string asked, the name of all nodes
+    fflush(stdin);
+    scanf("%s",&str1); //First string asked, the name of all nodes
 
     pch1=strtok(str1," ,"); //In this part the string is divided by comas           
     while(pch1!=NULL)
