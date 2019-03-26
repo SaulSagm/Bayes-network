@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
  
 struct node     //The name of each node is saved in a structure
 {
@@ -50,7 +51,7 @@ int main ()
     int sig=0,fract=0;
     int j,h,g;
     int n_states,n_prob,n_queries,n_node=0,lim=0,initial=0;
-    int countC,countD,acum=0,counter=0;
+    int countC=0,countD=0,acum=0,counter=0;
     double prob,par=1,prob1=0,prob2=0;  //Variables for calculations
     double numerator=0,denomitor=0;
     char str1[75],str2[75],str3[50],str4[50],str5[50],str6[50]; //Strings
@@ -63,7 +64,8 @@ int main ()
     char *val1=val,*cant1=cant,*por1=por,*var1=var;
     char *pot1=pot,*vat1=vat,*mat1=mat,*mar1=mar,*car1=car;
     
-    gets(str1); //First string asked, the name of all nodes
+    fflush(stdin);
+    scanf("%s",&str1); //First string asked, the name of all nodes
 
     pch1=strtok(str1," ,"); //In this part the string is divided by comas           
     while(pch1!=NULL)
@@ -128,7 +130,9 @@ int main ()
             if(countD>0)
             {
                 if(lim==0)
-                    lim=pow(2,countC+1);    //Number of conditions needed
+                {
+                    lim=2^(countC+1);    //Number of conditions needed
+                }
                 par=1;
                 strcpy(str6,str2);      //The string is saved in another one
                 pch3=strtok(str2," |=");
@@ -209,13 +213,13 @@ int main ()
                         }                       //with its condition
                     pch6=strtok(NULL," =");
                 }
-                printf("%s\t%f\n",nodeState[m].pstate,nodeState[m].prob);
+                //printf("%s\t%f\n",nodeState[m].pstate,nodeState[m].prob);
                 m++;
                 strcpy(complem,nodeState[m-1].pstate);  //Here the complements
                 complem[0]='-';                         //are calculated
                 strcpy(nodeState[m].pstate,complem);    //and saved
                 nodeState[m].prob=(1-prob)*par;
-                printf("%s\t%f\n",nodeState[m].pstate,nodeState[m].prob);
+                //printf("%s\t%f\n",nodeState[m].pstate,nodeState[m].prob);
                 m++;
                 n_prob--;
                 lim--;
@@ -243,7 +247,7 @@ int main ()
                     s=0;
                     nodeState[m].prob=prob1;    //The total of the probability
                     prob1=0;                    //is saved in the structure
-                    printf("%s\t%f\n",nodeState[m].pstate,nodeState[m].prob);
+                    //printf("%s\t%f\n",nodeState[m].pstate,nodeState[m].prob);
                     strcpy(str9,nodeState[m-2].pstate);
                     pch9=strtok(str9," ,");     //The same process like the last
                     while(pch9!=NULL)           //cycle but this time is for
@@ -264,7 +268,7 @@ int main ()
                     s=0;
                     nodeState[m+1].prob=prob1;
                     prob1=0;
-                    printf("%s\t%f\n",nodeState[m+1].pstate,nodeState[m+1].prob);
+                    //printf("%s\t%f\n",nodeState[m+1].pstate,nodeState[m+1].prob);
                     m=m+2;
                     initial=0;
                 }
