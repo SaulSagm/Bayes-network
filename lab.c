@@ -46,6 +46,7 @@ struct cden
 
 int main ()
 {
+    const int dos=2;
     int a=0,i=0,k=0,m=0,n=0,l=0,o=0,p=0,q=0;    //Flags and counters
     int r=0,s=0,t=0,u=0,y=0,w=0,x=0,z=0;
     int sig=0,fract=0;
@@ -131,7 +132,7 @@ int main ()
             {
                 if(lim==0)
                 {
-                    lim=2^(countC+1);    //Number of conditions needed
+                    lim=pow(dos,countC+1);    //Number of conditions needed
                 }
                 par=1;
                 strcpy(str6,str2);      //The string is saved in another one
