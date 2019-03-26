@@ -404,7 +404,7 @@ int main ()
     }
     
     for(j=0;j<r;j++)    //In the end all the values saved in the structure of
-        printf("%f\n",nresult[j].value);    //results is given in order
+        printf("%.7f\n",nresult[j].value);    //results is given in order
     
     return 0;   //End
 }
