@@ -50,9 +50,9 @@ int main ()
     int r=0,s=0,t=0,u=0,y=0,w=0,x=0,z=0;
     int sig=0,fract=0;
     int j,h,g;
-    int n_states,n_prob,n_queries,n_node=0,initial=0;
+    int n_states,n_prob,n_queries,n_node=0,lim=0,initial=0;
     int countC=0,countD=0,acum=0,counter=0;
-    double prob,par=1,prob1=0,prob2=0,lim=0;  //Variables for calculations
+    double prob,par=1,prob1=0,prob2=0;  //Variables for calculations
     double numerator=0,denomitor=0;
     char str1[75],str2[75],str3[50],str4[50],str5[50],str6[50]; //Strings
     char str7[50],str8[50],str9[50],str10[50],str11[50],str12[50],str13[50];
